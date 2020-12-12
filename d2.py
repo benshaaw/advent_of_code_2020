@@ -29,3 +29,19 @@ def exercise_1():
         matches_criteria,
         get_input()
     ))))
+
+
+def exercise_2():
+    def matches_criteria(d):
+       if len(d["password"]) < d["higher"]:
+           return d["password"][d["lower"] - 1] == d["character"]
+       else:
+           return (
+               bool(d["password"][d["lower"] - 1] == d["character"]) ^
+               bool(d["password"][d["higher"] - 1] == d["character"])
+           )
+
+    print(len(list(filter(
+        matches_criteria,
+        get_input()
+    ))))
