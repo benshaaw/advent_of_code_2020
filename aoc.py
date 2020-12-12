@@ -1,12 +1,16 @@
 #!/usr/bin/env python
 
 import re
+import os
 import sys
 
 import d1
 import d2
 
 if __name__ == "__main__":
+    os.chdir(
+        os.path.dirname(os.path.realpath(__file__))
+    )
     if len(sys.argv) != 3:
         sys.exit("./aoc <<advent_day>> <<exercise_number>>")
     elif not all([ re.match(r"[0-9]+", arg) for arg in sys.argv[1:]]):
@@ -20,6 +24,7 @@ if __name__ == "__main__":
                 },
                 "2": {
                     "1": d2.exercise_1,
+                    "2": d2.exercise_2,
                 },
             }.get(
                 sys.argv[1],
