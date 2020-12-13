@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 def get_input():
     with open("d2_input", "r") as f:
         raw = f.read()
